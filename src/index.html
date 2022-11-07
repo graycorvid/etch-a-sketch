@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/ETCH-A-SKETCH/public/css/main.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="box">
+        <div class="left">
+          <div class="menu">
+            <button class="rainbow">rainbow</button
+            ><button class="pick-color">pick color</button
+            ><button class="eraser">eraser</button>
+            <button class="grid">grid <span class="switch">on</span></button>
+            <button class="background">
+              <span class="black-or-white">white</span>
+            </button>
+            <p class="seperator">__________________________</p>
+            <button class="clear">clear</button>
+          </div>
+        </div>
+        <div class="center">
+          <header><h1>etch-a-sketch</h1></header>
+          <div class="main">
+            <div class="board"></div>
+            <div class="slider-container">
+              <input
+                type="range"
+                class="slider"
+                min="8"
+                max="96"
+                value="56"
+                step="8" />
+              <p>16 x 16</p>
+            </div>
+          </div>
+        </div>
+        <div class="right"></div>
+      </div>
+    </div>
+    <script src="/ETCH-A-SKETCH/src/js/index.js"></script>
+  </body>
+</html>

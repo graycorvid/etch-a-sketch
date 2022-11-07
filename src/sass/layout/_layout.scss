@@ -1,0 +1,51 @@
+@use "../abstracts/variables" as *;
+
+.box {
+  display: grid;
+  grid-template-columns: 3fr 5fr 1fr;
+  height: 100vh;
+}
+.left {
+  display: flex;
+  align-items: center;
+}
+.center {
+  display: grid;
+  grid-template-rows: 20vh 80vh;
+  position: relative;
+  background-color: var(--clr-theme-100);
+  border: 1.5px solid var(--clr-theme-400);
+  box-shadow: 0 0 300px 50px var(--clr-theme-600);
+  z-index: 1;
+}
+header {
+  h1 {
+    line-height: 10vh;
+    font-size: 3.5rem;
+    font-family: var(--font-family);
+    letter-spacing: 3px;
+    color: var(--clr-theme-500);
+    text-align: center;
+    text-shadow: 4px 4px 4px var(--clr-theme-200);
+    text-transform: uppercase;
+  }
+}
+.main {
+  display: grid;
+  grid-template-rows: 6fr 2fr;
+  align-items: center;
+  justify-items: center;
+}
+.board {
+  display: grid;
+  grid-template-rows: repeat(16, 1fr);
+  grid-template-columns: repeat(16, 1fr);
+  width: var(--board-size);
+  height: var(--board-size);
+  background-color: white;
+  border: 1px solid var(--clr-theme-300);
+  box-shadow: 0 0 12px 2px var(--clr-theme-200);
+}
+:is(.left, .right) {
+  background-color: var(--clr-basic-gray);
+}

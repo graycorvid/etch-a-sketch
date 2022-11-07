@@ -1,0 +1,26 @@
+@use "../abstracts/variables";
+.menu {
+  margin: 0 2rem;
+  padding: 2rem 0;
+  text-align: center;
+  font-family: var(--font-family);
+  color: var(--clr-theme-200);
+  background-color: var(--clr-basic-dark);
+  border: 1px solid var(--clr-theme-700);
+  box-shadow: 0 0 6px 3px var(--clr-theme-600);
+  z-index: 2;
+}
+//button//
+.menu button {
+  all: unset;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  width: 20vw;
+  border: 1px solid var(--clr-theme-300);
+  box-shadow: 0 0 3px 1px var(--clr-theme-200);
+  cursor: pointer;
+}
+.seperator {
+  padding: 1rem 0;
+  letter-spacing: -3px;
+}

@@ -1,0 +1,7 @@
+@use "../abstracts/variables" as *;
+
+.square {
+  width: auto;
+  height: auto;
+  border: 0.2px solid var(--clr-basic-black);
+}

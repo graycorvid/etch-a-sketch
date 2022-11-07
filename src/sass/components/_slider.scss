@@ -1,0 +1,32 @@
+@use "../abstracts/variables";
+.slider-container {
+  width: 50%;
+  text-align: center;
+  p {
+    font-size: 1.5rem;
+    font-family: var(--font-family);
+    color: var(--clr-theme-400);
+    text-align: center;
+    text-shadow: 4px 2px 3px var(--clr-theme-200);
+  }
+}
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 20px;
+  outline: solid 1px var(--clr-theme-500);
+  box-shadow: 0 0 6px 1px var(--clr-theme-300);
+  background: var(--clr-theme-white);
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  opacity: 1;
+  border-radius: 50%;
+  background-color: var(--clr-theme-500);
+  cursor: pointer;
+}

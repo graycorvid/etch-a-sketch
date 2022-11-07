@@ -1,0 +1,11 @@
+@use "colors" as *;
+
+:root {
+  @each $group, $numbers in $colors {
+    @each $number, $color in $numbers {
+      --clr-#{$group}-#{$number}: #{$color};
+    }
+  }
+  --board-size: 35vw;
+  --font-family: "Coda", cursive;
+}
