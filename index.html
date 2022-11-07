@@ -10,19 +10,37 @@
   <body>
     <div class="wrap">
       <div class="box">
+        <!-- MENU SECTION -->
         <div class="left">
           <div class="menu">
+            <!-- BUTTONS -->
             <button class="rainbow">rainbow</button
-            ><button class="pick-color">pick color</button
+            ><button id="pick-color">
+              <p class="pen">
+                <label for="pick color">pick color</label>
+                <input
+                  type="color"
+                  name="pen-color"
+                  class="pen-color"
+                  value="#873E3E" />
+              </p></button
             ><button class="eraser">eraser</button>
-            <button class="grid">grid <span class="switch">on</span></button>
-            <button class="background">
-              <span class="black-or-white">white</span>
+            <button class="grid">grid <span class="switch">off</span></button>
+            <button id="pick-background">
+              <p class="bgc">
+                <label for="background">background</label>
+                <input
+                  type="color"
+                  name="bgc-color"
+                  class="bgc-color"
+                  value="#FFFFFF" />
+              </p>
             </button>
             <p class="seperator">__________________________</p>
             <button class="clear">clear</button>
           </div>
         </div>
+        <!-- CENTER: SKETCHING BOARD -->
         <div class="center">
           <header><h1>etch-a-sketch</h1></header>
           <div class="main">
