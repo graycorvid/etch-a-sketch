@@ -2,14 +2,17 @@
 
 const board = document.querySelector(".board");
 const slider = document.querySelector(".slider-container input");
-const sizeXsize = document.querySelector(".slider-container p");
-const rainbowBtn = document.querySelector(".rainbow");
-// const gridBtn = document.querySelector(".grid");
+const squares = document.getElementsByClassName(".square");
+const sizeXsizeTXT = document.querySelector(".slider-container p");
+const rainbowBtn = document.querySelector(".normal");
+const gridBtn = document.querySelector(".grid");
+const eraseBtn = document.querySelector(".eraser");
+const clearBtn = document.querySelector(".clear");
+const gridSwitch = document.querySelector(".switch");
 const customPenColor = document.querySelector("input.pen-color");
 const customBgcColor = document.querySelector("input.bgc-color");
 let size;
 let mouseDown = false;
-const sliderValues = [];
 
 const getGridSize = () => {
   board.innerHTML = "";
@@ -17,7 +20,7 @@ const getGridSize = () => {
   for (let i = 0; i < size * size; i++) {
     createGrid(size);
   }
-  sizeXsize.textContent = `${size} x ${size}`;
+  sizeXsizeTXT.textContent = `${size} x ${size}`;
 };
 
 const createGrid = (size) => {
@@ -37,27 +40,45 @@ const disallowDrawing = () => {
 const sketchingMechanism = (e) => {
   if (
     mouseDown &&
-    e.target.className == "square" &&
-    rainbowBtn.textContent === "rainbow"
+    (e.target.className == "square" ||
+      e.target.className == "square square-border") &&
+    eraseBtn.textContent === "eraser on"
   ) {
-    customPen(e);
-  } else if (
-    mouseDown &&
-    e.target.className == "square" &&
-    rainbowBtn.textContent === "normal"
-  ) {
-    rainbowPen(e);
+    erasingPen(e);
+  } else {
+    if (
+      mouseDown &&
+      (e.target.className == "square" ||
+        e.target.className == "square square-border") &&
+      rainbowBtn.textContent === "normal"
+    ) {
+      customPen(e);
+    } else if (
+      mouseDown &&
+      (e.target.className == "square" ||
+        e.target.className == "square square-border") &&
+      rainbowBtn.textContent === "rainbow"
+    ) {
+      rainbowPen(e);
+    }
   }
 };
-const backgroundMechanism = () => {
+const toggleErasing = () => {
+  if (eraseBtn.textContent === "eraser") {
+    eraseBtn.textContent = "eraser on";
+  } else {
+    eraseBtn.textContent = "eraser";
+  }
+};
+const customBackground = () => {
   let pickedBgcColor = customBgcColor.value;
   board.style.backgroundColor = pickedBgcColor;
 };
 const rainbowBtnText = () => {
-  if (rainbowBtn.textContent === "rainbow") {
-    rainbowBtn.textContent = "normal";
-  } else {
+  if (rainbowBtn.textContent === "normal") {
     rainbowBtn.textContent = "rainbow";
+  } else {
+    rainbowBtn.textContent = "normal";
   }
 };
 const rainbowPen = (e) => {
@@ -70,6 +91,27 @@ const customPen = (e) => {
   let pickedPenColor = customPenColor.value;
   e.target.style.backgroundColor = `${pickedPenColor}`;
 };
+const erasingPen = (e) => {
+  e.target.style.backgroundColor = "";
+};
+//
+//TURNS OFF RAINBOW EFFECT IF NEW COLOR IS SELECTED IN customPen;
+const changePens = () => {
+  rainbowBtn.textContent = "normal";
+};
+const toggleGridBtn = () => {
+  if (gridSwitch.textContent == "off") {
+    gridSwitch.textContent = "on";
+  } else if (gridSwitch.textContent == "on") {
+    gridSwitch.textContent = "off";
+  }
+  board.classList.toggle("square-border");
+};
+const clearBoard = () => {
+  Array.from(board.getElementsByTagName("div")).forEach((square) => {
+    square.style.backgroundColor = "";
+  });
+};
 
 document.addEventListener("DOMContentLoaded", getGridSize);
 slider.addEventListener("input", getGridSize);
@@ -77,5 +119,9 @@ board.addEventListener("mousedown", allowDrawing);
 board.addEventListener("mouseup", disallowDrawing);
 board.addEventListener("mouseleave", disallowDrawing);
 board.addEventListener("mouseover", sketchingMechanism);
-customBgcColor.addEventListener("input", backgroundMechanism);
+customBgcColor.addEventListener("input", customBackground);
+customPenColor.addEventListener("click", changePens);
 rainbowBtn.addEventListener("click", rainbowBtnText);
+gridBtn.addEventListener("click", toggleGridBtn);
+eraseBtn.addEventListener("click", toggleErasing);
+clearBtn.addEventListener("click", clearBoard);

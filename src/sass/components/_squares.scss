@@ -3,8 +3,8 @@
 .square {
   width: auto;
   height: auto;
+  border: 0.2px solid transparent;
 }
-//styles for toggle grid:
-.grid {
+.square-border div {
   border: 0.2px solid var(--clr-basic-black);
 }
