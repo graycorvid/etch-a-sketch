@@ -66,8 +66,10 @@ const sketchingMechanism = (e) => {
 const toggleErasing = () => {
   if (eraseBtn.textContent === "eraser") {
     eraseBtn.textContent = "eraser on";
+    eraseBtn.classList.add("eraser-on");
   } else {
     eraseBtn.textContent = "eraser";
+    eraseBtn.classList.remove("eraser-on");
   }
 };
 const customBackground = () => {
@@ -77,8 +79,10 @@ const customBackground = () => {
 const rainbowBtnText = () => {
   if (rainbowBtn.textContent === "normal") {
     rainbowBtn.textContent = "rainbow";
+    rainbowBtn.classList.add("rainbow-bgc");
   } else {
     rainbowBtn.textContent = "normal";
+    rainbowBtn.classList.remove("rainbow-bgc");
   }
 };
 const rainbowPen = (e) => {

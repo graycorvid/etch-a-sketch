@@ -17,6 +17,12 @@
     border: 1px solid var(--clr-theme-300);
     box-shadow: 0 0 3px 1px var(--clr-theme-200);
     cursor: pointer;
+    transition: 0.4s;
+    &:hover {
+      box-shadow: 0 0 10px 2px var(--clr-theme-200);
+      text-shadow: 0 0 20px var(--clr-theme-100);
+      color: var(--clr-theme-300);
+    }
   }
   input {
     border-radius: 50%;
@@ -49,4 +55,22 @@
 .seperator {
   padding: 1rem 0;
   letter-spacing: -3px;
+}
+button.rainbow-bgc {
+  color: var(--clr-theme-500);
+  background: linear-gradient(60deg, fuchsia 0%, transparent 20%),
+    linear-gradient(120deg, red 10%, transparent 30%),
+    linear-gradient(70deg, orange 20%, transparent 50%),
+    linear-gradient(30deg, yellow 30%, transparent 60%),
+    linear-gradient(150deg, green 60%, transparent 80%),
+    linear-gradient(60deg, blue 40%, transparent 100%),
+    linear-gradient(120deg, indigo 70%, transparent 100%),
+    linear-gradient(70deg, purple 70%, transparent 100%);
+}
+button.eraser-on {
+  background-color: var(--clr-theme-200);
+  color: var(--clr-theme-700);
+  &:hover {
+    color: var(--clr-theme-500);
+  }
 }
