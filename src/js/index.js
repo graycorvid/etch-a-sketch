@@ -102,6 +102,7 @@ const erasingPen = (e) => {
 //TURNS OFF RAINBOW EFFECT IF NEW COLOR IS SELECTED IN customPen;
 const changePens = () => {
   rainbowBtn.textContent = "normal";
+  rainbowBtn.classList.remove("rainbow-bgc");
 };
 const toggleGridBtn = () => {
   if (gridSwitch.textContent == "off") {
