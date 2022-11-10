@@ -1,5 +1,6 @@
 # etch-a-sketch
-My take on the 'etch-a-sketch' project idea from The Odin Project. 
+My take on the 'etch-a-sketch' project idea from The Odin Project.
+It's the first public desktop version - there might be some changes in the future.
 
 (HTML, SCSS and JavaScript.)
 
