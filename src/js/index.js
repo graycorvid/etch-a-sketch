@@ -1,8 +1,5 @@
-/* eslint-disable */
-
 const board = document.querySelector(".board");
 const slider = document.querySelector(".slider-container input");
-const squares = document.getElementsByClassName(".square");
 const sizeXsizeTXT = document.querySelector(".slider-container p");
 const rainbowBtn = document.querySelector(".normal");
 const gridBtn = document.querySelector(".grid");
