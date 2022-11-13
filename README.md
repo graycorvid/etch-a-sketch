@@ -15,10 +15,10 @@ ______________________________
 ## Slider: 
 Pick the grid size. Smallest option is 8x8 and it goes up to 96x96. Steps are a multiple of 8.
 
-##Tech:
+## Tech:
 HTML, SCSS and JavaScript
 
-##Some thoughts:
+## Some thoughts:
 I decided to go through The Odin Project's 'Foundations' instead of jumping straight into 'Full Stack JavaScript path' to make sure I'm starting with an even knowledge base. 
 
 I found certain parts more challenging than others. The biggest problem for me was writing functions and events in a way that would make them work together AND seperately. Once I started to break big functions into smaller ones it became much easier to figure out what to use when. Creating a seprate variable for checking if the mouse is down or up was a game changer as well. 
