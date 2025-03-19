@@ -1,34 +1,19 @@
 {
   "name": "etch-a-sketch",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "build:sass": "sass  --no-source-map src/sass:public/css",
-    "copy:html": "copyfiles -u 1 ./src/*.html public",
-    "copy": "npm-run-all --parallel copy:*",
-    "watch:html": "onchange 'src/*.html' -- npm run copy:html",
-    "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
-    "watch": "npm-run-all --parallel watch:*",
-    "serve": "browser-sync start --server public --files public",
-    "start": "npm-run-all copy --parallel watch serve",
-    "build": "npm-run-all copy:html build:*",
-    "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map"
+    "sass-dev": "sass --watch --style=expanded src/sass:src/css",
+    "sass-prod": "sass --no-source-map --style=compressed src/sass:src/css",
+    "build": "npm run sass-prod"
   },
-  "author": "graycrovv",
-  "license": "ISC",
   "dependencies": {
-    "autoprefixer": "^10.4.15",
-    "browser-sync": "^3.0.2",
-    "copyfiles": "^2.4.1",
-    "cssnano": "^5.1.15",
-    "normalize.css": "^8.0.1",
-    "npm-run-all": "^4.1.5",
-    "onchange": "^7.1.0",
-    "postcss-cli": "^9.1.0",
-    "sass": "^1.66.1"
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "eslint": "^8.47.0"
-  }
+    "sass": "^1.49.8"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
