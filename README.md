@@ -22,7 +22,7 @@ HTML, SCSS and JavaScript
 I decided to go through The Odin Project's 'Foundations' instead of jumping straight into 'Full Stack JavaScript path' to make sure I'm starting with an even knowledge base. 
 
 I found certain parts more challenging than others. The biggest problem for me was writing functions and events in a way that would make them work together AND seperately. Once I started to break big functions into smaller ones it became much easier to figure out what to use when. Creating a seprate variable for checking if the mouse is down or up was a game changer as well. 
-Another problem that I was stuck on for a hot minute was turning the grid on and off. It took a break and a nap for me to figure out that adding and removing border from EVERY single square individually wasn't the best performance choice. I fixed it with a simple class .toggle on the parent element.
+Another problem that I was stuck on for a some time was turning the grid on and off. Turns out adding and removing border from EVERY single square individually wasn't the best performance choice. I fixed it with a simple class .toggle on the parent element.
 
 This project forced me out of my comfort zone when it comes to using SCSS as well. I only used it in a project once before, so it was a very much needed refresher. I got some tips from Kevin Powell's ["Getting started with Sass"](https://www.youtube.com/playlist?list=PL4-IK0AVhVjMYRhK9vRPatSlb-9r0aKgh) YT series that helped immensely. 
 
